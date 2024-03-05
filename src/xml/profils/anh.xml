@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<profil xmlns="http://myGame/tux" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://myGame/tux ../xsd/profil.xsd">
+    <nom>anh</nom>
+    <anniversaire>01/02/1999</anniversaire>
+    <avatar>Doty Happy</avatar>
+    <parties>
+        <partie date="2023-12-01" trouvé="100%">
+            <temps>20</temps>
+            <mot niveau="2">cerise</mot>
+        </partie>
+        <partie date="2023-12-01" trouvé="100%">
+            <temps>28</temps>
+            <mot niveau="3">carotte</mot>
+        </partie>
+        <partie date="2023-12-01" trouvé="25%">
+            <temps>21</temps>
+            <mot niveau="4">papillon</mot>
+        </partie>
+        <partie date="2023-12-01" trouvé="100%">
+            <temps>14</temps>
+            <mot niveau="3">mouton</mot>
+        </partie>
+    </parties>
+</profil>

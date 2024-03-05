@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dictionnaire xmlns="http://myGame/tux"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://myGame/tux ../xsd/dico.xsd">
+    
+    <mot niveau="1">chat</mot>
+    <mot niveau="1">chien</mot>
+    <mot niveau="1">lapin</mot>
+    <mot niveau="2">poule</mot>
+    <mot niveau="1">vache</mot>
+    <mot niveau="1">cochon</mot>
+    <mot niveau="3">mouton</mot>
+    <mot niveau="4">cheval</mot>
+    <mot niveau="3">canard</mot>
+    
+    <mot niveau="1">pomme</mot>
+    <mot niveau="1">poire</mot>
+    <mot niveau="2">banane</mot>
+    <mot niveau="2">fraise</mot>
+    <mot niveau="2">cerise</mot>
+    <mot niveau="2">raisin</mot>
+    <mot niveau="4">abricot</mot>
+    <mot niveau="2">orange</mot>
+    
+    <mot niveau="2">pomme</mot>
+    <mot niveau="3">tomate</mot>
+    <mot niveau="3">carotte</mot>
+    <mot niveau="4">courgette</mot>
+    <mot niveau="3">poivron</mot>
+    <mot niveau="4">aubergine</mot>
+    <mot niveau="3">radis</mot>
+    <mot niveau="3">salade</mot>
+   
+    <mot niveau="5">champignon</mot>
+    <mot niveau="5">chataigne</mot>
+    <mot niveau="2">sapin</mot>
+    <mot niveau="5">pissenlit</mot>
+    <mot niveau="4">papillon</mot>
+    <mot niveau="5">coccinelle</mot>
+    <mot niveau="5">escargot</mot>
+    <mot niveau="5">grenouille</mot>
+    <mot niveau="5">libellule</mot>
+    
+    <mot niveau="3">papier</mot>
+    <mot niveau="2">stylo</mot>
+    <mot niveau="4">crayon</mot>
+    <mot niveau="1">gomme</mot>
+    <mot niveau="3">cahier</mot>
+    <mot niveau="5">cartable</mot>
+    <mot niveau="4">trousse</mot>
+    <mot niveau="3">regle</mot>
+    <mot niveau="5">calculatrice</mot>
+    <mot niveau="5">peinture</mot>
+    <mot niveau="1">papa</mot>
+    <mot niveau="1">maman</mot>
+    <mot niveau="1">frere</mot>
+    <mot niveau="1">soeur</mot>
+    <mot niveau="1">bebe</mot>
+    <mot niveau="5">automobile</mot>
+    <mot niveau="4">ciseaux</mot>
+    <mot niveau="4">compas</mot>
+</dictionnaire>
+    

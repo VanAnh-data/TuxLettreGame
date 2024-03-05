@@ -1,0 +1,68 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* Style pour le titre h1 */
+h1 {
+    color: #007BFF;
+}
+
+/* Style pour la classe BonjourPatient */
+.BonjourPatient {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Style pour la classe Renseignements */
+.Renseignements {
+    margin-bottom: 20px;
+}
+
+/* Style pour le sous-titre h5 dans la classe Renseignements */
+.Renseignements h5 {
+    color: #28A745;
+}
+
+/* Style pour la table dans la classe Renseignements */
+.Renseignements table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+/* Style pour les cellules de la table dans la classe Renseignements */
+.Renseignements td {
+    padding: 8px;
+    border: 1px solid #CED4DA;
+}
+
+/* Style pour la classe Visites */
+.Visites {
+    margin-top: 20px;
+}
+
+/* Style pour le sous-titre h2 dans la classe Visites */
+.Visites h2 {
+    color: #DC3545;
+}
+
+/* Style pour la table dans la classe Visites */
+.Visites table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+/* Style pour les cellules de la table dans la classe Visites */
+.Visites th, .Visites td {
+    padding: 8px;
+    border: 1px solid #CED4DA;
+}
+
+/* Style spécifique pour les cellules du tableau des actes dans la classe Visites */
+.Visites td:last-child {
+    white-space: pre-line; /* Pour conserver les sauts de ligne dans le texte des cellules */
+}

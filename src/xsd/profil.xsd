@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<xs:schema version="1.0" targetNamespace="http://myGame/tux"
+           xmlns="http://myGame/tux"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <!--- déclaration d'un élément racine "profil" de type "Profil" -->
+    <xs:element name="profil" type="Profil"/>
+    <!--- déclaration d'un type complexe "Profil" -->
+    <xs:complexType name="Profil">
+        <!--Un profil est composé d'un nom, d'un avatar, d'une date d'anniversaire et d'une liste de parties-->
+        <xs:sequence> 
+            <xs:element name="nom" type="xs:string"/>
+            <xs:element name="avatar" type="xs:string"/>
+            <xs:element name="anniversaire" type="xs:date"/>
+            <xs:element name="parties" type="Parties"/> <!--Parties est un type complexe défini plus bas-->
+        </xs:sequence>     
+    </xs:complexType>
+    <!--- déclaration d'un type complexe "Parties" -->
+    <xs:complexType name="Parties">
+        <!--Dans parties, on a une liste de parties-->
+        <xs:sequence>
+            <xs:element name="partie" type = "Partie" maxOccurs="unbounded"/> 
+        </xs:sequence>
+    </xs:complexType>
+    <!--- déclaration d'un type complexe "Partie" -->
+    <xs:complexType name="Partie">
+        <xs:sequence>
+            <xs:element name="temps" type="xs:float" minOccurs="0"/> <!--temps est un élément optionnel-->
+            <xs:element name="mot" type="Mot"/> <!--Mot est un type complexe défini plus bas-->
+        </xs:sequence>
+        <xs:attribute name="date" type="xs:date" />
+        <xs:attribute name="trouvé" type="xs:string"/>
+    </xs:complexType>
+    
+    <!--- Déclaration d'un type complexe "Mot" -->
+    <xs:complexType name="Mot">
+        <!--Un mot est composé d'un niveau et d'un mot valide-->
+        <xs:simpleContent>
+            <xs:extension base = "MotValide"> 
+                <xs:attribute name="niveau" type="Niveau"/>
+            </xs:extension>
+        </xs:simpleContent>
+        
+    </xs:complexType>
+    
+    <!--- Déclaration d'un type simple "Mot2" -->
+    <xs:simpleType name="MotValide">
+        <!--Un mot valide est composé de lettres minuscules et sans accent 
+        et doit avoir au moins 3 lettres-->
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-z]+"/>
+            <xs:minLength value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!--- Déclaration d'un type simple "Niveau" -->
+    <!--Le niveau doit être compris entre 1 et 5-->
+    <xs:simpleType name="Niveau">
+        <xs:restriction base="xs:int">
+            <xs:minExclusive value="0"/>
+            <xs:maxExclusive value="5"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    
+</xs:schema>

@@ -1,0 +1,144 @@
+<html xmlns:act="http://www.ujf-grenoble.fr/l3miage/actes" xmlns:med="http://www.ujf-grenoble.fr/l3miage/medical">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="../css/cabinet.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript">
+                    function openFacture(prenom, nom, actes) {
+                    var width  = 500;
+                    var height = 300;
+                    if(window.innerWidth) {
+                    var left = (window.innerWidth-width)/2;
+                    var top = (window.innerHeight-height)/2;
+                    }
+                    else {
+                    var left = (document.body.clientWidth-width)/2;
+                    var top = (document.body.clientHeight-height)/2;
+                    }
+                   
+                    var factureWindow = window.open('','facture','menubar=yes, scrollbars=yes, top='+top+', left='+left+', width='+width+', height='+height+'');
+                    factureText = "Facture pour : " + prenom + " " + nom;
+                    factureWindow.document.write(factureText);
+                    }
+                </script>
+        <title>Page de l'infirmi&egrave;re</title>
+    </head>
+    <body>
+        <div id="BonjourInf">
+            <h1>Bonjour Sarah,</h1>
+            <p>Aujourd'hui, vous avez 4 patients</p>
+        </div>
+        <div id="patientInfo">
+            <div class="infoPatient">
+                            Patient :
+                <br>
+                            Nom : Yvon
+                <br>
+                            Pr&eacute;nom : Al&eacute;cole
+                <br>
+                            Adresse:
+            avenue F&eacute;lix Viallet Grenoble 38031 
+                <br>
+                 
+            </div>
+            <div class="soin">
+                            Liste des soins:
+                <br>
+                                Acte : 
+            Injection sous-cutan&eacute;e.
+        
+                <br>
+            </div>
+            <input type="button" value="Facture" onclick="
+                openFacture('Yvon',
+                'Al&eacute;cole',
+                '')
+            ">
+            <div class="infoPatient">
+                            Patient :
+                <br>
+                            Nom : Oscare
+                <br>
+                            Pr&eacute;nom : Pien
+                <br>
+                            Adresse:
+            rue Casimir Brenier Grenoble 38000 
+                <br>
+                 
+            </div>
+            <div class="soin">
+                            Liste des soins:
+                <br>
+                                Acte : 
+            Injection intraveineuse directe en s&eacute;rie.
+        
+                <br>
+                                Acte :  
+            Pr&eacute;l&egrave;vement par ponction veineuse directe
+        
+                <br>
+                                Acte : 
+            Saign&eacute;e      
+        
+                <br>
+            </div>
+            <input type="button" value="Facture" onclick="
+                openFacture('Oscare',
+                'Pien',
+                '')
+            ">
+            <div class="infoPatient">
+                            Patient :
+                <br>
+                            Nom : Xavier
+                <br>
+                            Pr&eacute;nom : Kapo&euml;tla
+                <br>
+                            Adresse:
+            rue des Martyrs Grenoble 38042 
+                <br>
+                 
+            </div>
+            <div class="soin">
+                            Liste des soins:
+                <br>
+                                Acte : 
+            Injection d'un ou plusieurs allerg&egrave;nes, poursuivant un traitement
+            d'hyposensibilisation sp&eacute;cifique, selon le protocole &eacute;crit, y compris la
+            surveillance, la tenue du dossier de soins, la transmission des informations 
+            au m&eacute;decin prescripteur.
+        
+                <br>
+            </div>
+            <input type="button" value="Facture" onclick="
+                openFacture('Xavier',
+                'Kapo&euml;tla',
+                '')
+            ">
+            <div class="infoPatient">
+                            Patient :
+                <br>
+                            Nom : Henry
+                <br>
+                            Pr&eacute;nom : Grino
+                <br>
+                            Adresse:
+            avenue de la Republique Grenoble 38000 
+                <br>
+                 
+            </div>
+            <div class="soin">
+                            Liste des soins:
+                <br>
+                                Acte : 
+            Injection d'un implant sous cutan&eacute;.
+        
+                <br>
+            </div>
+            <input type="button" value="Facture" onclick="
+                openFacture('Henry',
+                'Grino',
+                '')
+            ">
+        </div>
+    </body>
+</html>

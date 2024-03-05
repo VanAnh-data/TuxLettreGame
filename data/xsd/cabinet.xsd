@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<xs:schema version="1.0" targetNamespace="http://www.ujf-grenoble.fr/l3miage/medical" 
+                xmlns:med="http://www.ujf-grenoble.fr/l3miage/medical" 
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                elementFormDefault="qualified">
+    
+    <!-- Déclaration d'un élément racine "cabinet" de type "CabinetType" du vocabulaire en création -->
+    <xs:element name="cabinet" type="med:CabinetType">
+        <!-- ici on fixe le champ attribut "id" comme une contrainte d'unicité qui doit obligatoirement éxister: 
+        chaque infirmier doit avoir un id et deux infirmiers ne peuvent avoir le mème id ("key") -->
+        <xs:key name="uniqueInfirmierId">
+            <xs:selector xpath="med:infirmiers/med:infirmier"/>
+            <xs:field xpath="@id"/>
+        </xs:key>
+        
+        <!-- ici on vérifie si la valeur du champ "@intervenant" est présente dans la base de donnée par une contrainte d'éxistence uniqueInfirmierId d'un infiermier -->
+        <!-- en transformant @intervenant en une clef d'éxistence et l'associant à la clef uniqueInfirmierId-->
+        <!-- en gros ça  vérifie si l'infirmier d'id "@intervenant" éxiste bien -->
+        <xs:keyref name="refInfirmier" refer="med:uniqueInfirmierId">
+            <xs:selector xpath="med:patients/med:patient/med:visite"/>
+            <xs:field xpath="@intervenant"/>
+        </xs:keyref>
+    </xs:element>
+  
+  <!-- Construction du type "CabinetType" -->
+  <xs:complexType name="CabinetType"> <!-- CabinetType et 'c'abinetType !!!! -->
+    <xs:sequence>
+      <xs:element name="nom" type="xs:string"/>
+      <xs:element name="adresse" type="med:AdresseType"/>  <!--pas besoin de préciser minOccurs="1", ne juste rien mettre, car il doit y avoir uun seul codePostal, pas plus pas moins-->
+      <xs:element name="infirmiers" type="med:InfirmiersType"/>   
+      <xs:element name="patients" type="med:PatientsType" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <!-- Construction du type "AdresseType" -->
+  <xs:complexType name="AdresseType">
+    <xs:sequence>
+      <xs:element name="étage" type="xs:string" minOccurs="0"/>
+      <xs:element name="numéro" type="xs:string" minOccurs="1"/> 
+      <xs:element name="rue" type="xs:string" minOccurs="1"/>
+      <xs:element name="ville" type="xs:string" minOccurs="1"/>
+      <xs:element name="codePostal" type="xs:string"/> 
+    </xs:sequence>
+  </xs:complexType>
+  <!-- Construction du type "InfirmiersType", une liste d'infiermiers -->
+  <xs:complexType name="InfirmiersType">
+    <xs:sequence>
+      <xs:element name="infirmier" type="med:InfirmierType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <!-- Construction du type "InfirmierType", qui represente un infiermier-->
+  <xs:complexType name="InfirmierType">
+    <xs:sequence>
+      <xs:element name="nom" type="xs:string" minOccurs="1"/>
+      <xs:element name="prénom" type="xs:string" minOccurs="1"/>
+      <xs:element name="photo" type="xs:string" minOccurs="1"/>
+     
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>  
+  </xs:complexType>
+  
+  <!-- Construction du type "PatientsType", une liste patients -->
+  <xs:complexType name="PatientsType">
+    <xs:sequence>
+      <xs:element name="patient" type="med:PatientType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <!-- Construction du type "PatientType", qui represente un patient-->
+  <xs:complexType name="PatientType">
+    <xs:sequence>
+      <xs:element name="nom" type="xs:string" minOccurs="1"/>
+      <xs:element name="prénom" type="xs:string" minOccurs="1"/> 
+      <xs:element name="sexe" type="xs:string" minOccurs="1"/>
+      <xs:element name="naissance" type="xs:string" minOccurs="1"/>
+      <xs:element name="numéro" type="med:Numero_Securite" minOccurs="1"/>
+      <xs:element name="adresse" type="med:AdresseType" minOccurs="1"/>
+      <xs:element name="visite" type="med:VisiteType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Construction du type "Numero_Securite" -->
+  <xs:simpleType name="Numero_Securite">
+    <xs:restriction base="xs:string">
+        <!--- [12] spécifie que le premier chiffre doit être 1 ou 2 pour le sexe, \d{2} pour l'année de naissance, (0[1-9]|1[0-2]) pour le mois de naissance (de 01 à 12), 
+        (\d{5}) pour le lieu de naissance (code du département)et le code commune officiel de l'Insee
+        (\d{3}) l'ordre d'entregistrement, et (\d{2}) Clé de sécurité.-->
+      <xs:pattern value="[12]\d{2}(0[1-9]|1[0-2])(\d{5})(\d{3})(\d{2})" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- Construction du type "VisiteType", une liste d'actes -->
+  <xs:complexType name="VisiteType">
+    <xs:sequence>
+      <xs:element name="acte" type="med:ActeType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="date" type="xs:string" use="required"/>
+    <xs:attribute name="intervenant" type="xs:string"/>
+  </xs:complexType>
+  
+  <xs:complexType name="ActeType">
+   <xs:attribute name="id" type="xs:string" use="required"/>
+  </xs:complexType>
+</xs:schema>

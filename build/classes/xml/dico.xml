@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dictionnaire xmlns="http://myGame/tux"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://myGame/tux ../xsd/dico.xsd">
+    
+    <mot niveau="1">chat</mot>
+    <mot niveau="2">chien</mot>
+    <mot niveau="3">maison</mot>
+    <mot niveau="4">voiture</mot>
+    <mot niveau="5">jardin</mot>
+    <mot niveau="5">vananh</mot>
+    <mot niveau="5">quochuy</mot>
+    <mot niveau="5">trananh</mot>
+    <mot niveau="5">mamama</mot>
+    <mot niveau="4">lune</mot>
+    <mot niveau="5">aranthi</mot>
+    <mot niveau="4">ghhrrhi</mot>
+    
+    
+</dictionnaire>
+    

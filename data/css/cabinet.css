@@ -1,0 +1,146 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+
+#BonjourInf {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+
+#BonjourInf p {
+    font-size: 18px;
+}
+
+
+#patientInfo {
+    margin: 20px;
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+
+.infoPatient {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+
+.soin {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+
+input[type="button"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+
+input[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+.BonjourPatient {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.Renseignements {
+  margin-bottom: 20px;
+}
+
+h5 {
+  font-size: 16px;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+th {
+  background-color: #f9f9f9;
+  font-weight: bold;
+}
+
+.Visites {
+  margin-top: 20px;
+}
+
+h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+br {
+  margin-bottom: 5px;
+}
+
+
+
+
+h2, h5 {
+  color: #007bff;
+}
+
+.BonjourPatient {
+  background-color: #f9f9f9;
+  padding: 10px;
+}
+
+table {
+  background-color: #fff;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.Visites {
+  background-color: #f9f9f9;
+  padding: 10px;
+}
